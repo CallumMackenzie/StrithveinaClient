@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		F26BA8762CCA3D3F008A2F92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F26BA8552CCA3D3D008A2F92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F26BA85C2CCA3D3D008A2F92;
+			remoteInfo = Strithveina;
+		};
+		F26BA8802CCA3D3F008A2F92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F26BA8552CCA3D3D008A2F92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F26BA85C2CCA3D3D008A2F92;
+			remoteInfo = Strithveina;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F26BA85D2CCA3D3D008A2F92 /* Strithveina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Strithveina.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F26BA8752CCA3D3F008A2F92 /* StrithveinaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrithveinaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F26BA87F2CCA3D3F008A2F92 /* StrithveinaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrithveinaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F26BA85F2CCA3D3D008A2F92 /* Strithveina */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Strithveina;
+			sourceTree = "<group>";
+		};
+		F26BA8782CCA3D3F008A2F92 /* StrithveinaTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = StrithveinaTests;
+			sourceTree = "<group>";
+		};
+		F26BA8822CCA3D3F008A2F92 /* StrithveinaUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = StrithveinaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F26BA85A2CCA3D3D008A2F92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26BA8722CCA3D3F008A2F92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26BA87C2CCA3D3F008A2F92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F26BA8542CCA3D3D008A2F92 = {
+			isa = PBXGroup;
+			children = (
+				F26BA85F2CCA3D3D008A2F92 /* Strithveina */,
+				F26BA8782CCA3D3F008A2F92 /* StrithveinaTests */,
+				F26BA8822CCA3D3F008A2F92 /* StrithveinaUITests */,
+				F26BA85E2CCA3D3D008A2F92 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F26BA85E2CCA3D3D008A2F92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F26BA85D2CCA3D3D008A2F92 /* Strithveina.app */,
+				F26BA8752CCA3D3F008A2F92 /* StrithveinaTests.xctest */,
+				F26BA87F2CCA3D3F008A2F92 /* StrithveinaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F26BA85C2CCA3D3D008A2F92 /* Strithveina */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F26BA8892CCA3D3F008A2F92 /* Build configuration list for PBXNativeTarget "Strithveina" */;
+			buildPhases = (
+				F26BA8592CCA3D3D008A2F92 /* Sources */,
+				F26BA85A2CCA3D3D008A2F92 /* Frameworks */,
+				F26BA85B2CCA3D3D008A2F92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F26BA85F2CCA3D3D008A2F92 /* Strithveina */,
+			);
+			name = Strithveina;
+			packageProductDependencies = (
+			);
+			productName = Strithveina;
+			productReference = F26BA85D2CCA3D3D008A2F92 /* Strithveina.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F26BA8742CCA3D3F008A2F92 /* StrithveinaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F26BA88C2CCA3D3F008A2F92 /* Build configuration list for PBXNativeTarget "StrithveinaTests" */;
+			buildPhases = (
+				F26BA8712CCA3D3F008A2F92 /* Sources */,
+				F26BA8722CCA3D3F008A2F92 /* Frameworks */,
+				F26BA8732CCA3D3F008A2F92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F26BA8772CCA3D3F008A2F92 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F26BA8782CCA3D3F008A2F92 /* StrithveinaTests */,
+			);
+			name = StrithveinaTests;
+			packageProductDependencies = (
+			);
+			productName = StrithveinaTests;
+			productReference = F26BA8752CCA3D3F008A2F92 /* StrithveinaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F26BA87E2CCA3D3F008A2F92 /* StrithveinaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F26BA88F2CCA3D3F008A2F92 /* Build configuration list for PBXNativeTarget "StrithveinaUITests" */;
+			buildPhases = (
+				F26BA87B2CCA3D3F008A2F92 /* Sources */,
+				F26BA87C2CCA3D3F008A2F92 /* Frameworks */,
+				F26BA87D2CCA3D3F008A2F92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F26BA8812CCA3D3F008A2F92 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F26BA8822CCA3D3F008A2F92 /* StrithveinaUITests */,
+			);
+			name = StrithveinaUITests;
+			packageProductDependencies = (
+			);
+			productName = StrithveinaUITests;
+			productReference = F26BA87F2CCA3D3F008A2F92 /* StrithveinaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F26BA8552CCA3D3D008A2F92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					F26BA85C2CCA3D3D008A2F92 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					F26BA8742CCA3D3F008A2F92 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = F26BA85C2CCA3D3D008A2F92;
+					};
+					F26BA87E2CCA3D3F008A2F92 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = F26BA85C2CCA3D3D008A2F92;
+					};
+				};
+			};
+			buildConfigurationList = F26BA8582CCA3D3D008A2F92 /* Build configuration list for PBXProject "Strithveina" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F26BA8542CCA3D3D008A2F92;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F26BA85E2CCA3D3D008A2F92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F26BA85C2CCA3D3D008A2F92 /* Strithveina */,
+				F26BA8742CCA3D3F008A2F92 /* StrithveinaTests */,
+				F26BA87E2CCA3D3F008A2F92 /* StrithveinaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F26BA85B2CCA3D3D008A2F92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26BA8732CCA3D3F008A2F92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26BA87D2CCA3D3F008A2F92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F26BA8592CCA3D3D008A2F92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26BA8712CCA3D3F008A2F92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26BA87B2CCA3D3F008A2F92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F26BA8772CCA3D3F008A2F92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F26BA85C2CCA3D3D008A2F92 /* Strithveina */;
+			targetProxy = F26BA8762CCA3D3F008A2F92 /* PBXContainerItemProxy */;
+		};
+		F26BA8812CCA3D3F008A2F92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F26BA85C2CCA3D3D008A2F92 /* Strithveina */;
+			targetProxy = F26BA8802CCA3D3F008A2F92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F26BA8872CCA3D3F008A2F92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F26BA8882CCA3D3F008A2F92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F26BA88A2CCA3D3F008A2F92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R3YNVXH9H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.basementgym.Strithveina;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/ShaderTypes.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F26BA88B2CCA3D3F008A2F92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R3YNVXH9H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.basementgym.Strithveina;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/ShaderTypes.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F26BA88D2CCA3D3F008A2F92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R3YNVXH9H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.basementgym.StrithveinaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Strithveina.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Strithveina";
+			};
+			name = Debug;
+		};
+		F26BA88E2CCA3D3F008A2F92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R3YNVXH9H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.basementgym.StrithveinaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Strithveina.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Strithveina";
+			};
+			name = Release;
+		};
+		F26BA8902CCA3D3F008A2F92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R3YNVXH9H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.basementgym.StrithveinaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Strithveina;
+			};
+			name = Debug;
+		};
+		F26BA8912CCA3D3F008A2F92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R3YNVXH9H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.basementgym.StrithveinaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Strithveina;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F26BA8582CCA3D3D008A2F92 /* Build configuration list for PBXProject "Strithveina" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F26BA8872CCA3D3F008A2F92 /* Debug */,
+				F26BA8882CCA3D3F008A2F92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F26BA8892CCA3D3F008A2F92 /* Build configuration list for PBXNativeTarget "Strithveina" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F26BA88A2CCA3D3F008A2F92 /* Debug */,
+				F26BA88B2CCA3D3F008A2F92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F26BA88C2CCA3D3F008A2F92 /* Build configuration list for PBXNativeTarget "StrithveinaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F26BA88D2CCA3D3F008A2F92 /* Debug */,
+				F26BA88E2CCA3D3F008A2F92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F26BA88F2CCA3D3F008A2F92 /* Build configuration list for PBXNativeTarget "StrithveinaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F26BA8902CCA3D3F008A2F92 /* Debug */,
+				F26BA8912CCA3D3F008A2F92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F26BA8552CCA3D3D008A2F92 /* Project object */;
+}
