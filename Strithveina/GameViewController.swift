@@ -18,13 +18,13 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         guard let mtkView = view as? MTKView else {
-            print("View of Gameview controller is not an MTKView")
+            Log.gameViewError("View of Gameview controller is not an MTKView")
             return
         }
 
         // Select the device to render with.  We choose the default device
         guard let defaultDevice = MTLCreateSystemDefaultDevice() else {
-            print("Metal is not supported")
+            Log.gameViewError("Metal is not supported")
             return
         }
         
@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
         mtkView.backgroundColor = UIColor.black
 
         guard let newRenderer = Renderer(metalKitView: mtkView) else {
-            print("Renderer cannot be initialized")
+            Log.gameViewError("Renderer cannot be initialized")
             return
         }
 
@@ -41,5 +41,7 @@ class GameViewController: UIViewController {
         renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
 
         mtkView.delegate = renderer
+        
+        Log.gameView("Set up game view")
     }
 }
