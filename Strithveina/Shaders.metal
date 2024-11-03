@@ -19,12 +19,14 @@ typedef struct
 {
     float2 position;
     float4 color;
+    float2 texCoord;
 } Vertex;
 
 typedef struct
 {
     float4 position [[position]];
     float4 color;
+    float2 texCoord;
 } ColorInOut;
 
 typedef struct {
@@ -42,11 +44,18 @@ vertex ColorInOut vertexShader(device const Vertex *vertexes [[buffer(BufferInde
     
     out.position = float4(transformed + uniforms.offset, 0.0, 1.0);
     out.color = vertexes[vid].color;
+    out.texCoord = vertexes[vid].texCoord;
 
     return out;
 }
 
-fragment float4 fragmentShader(ColorInOut in [[stage_in]])
+fragment float4 fragmentShader(ColorInOut in [[stage_in]],
+                               texture2d<half> colorMap [[ texture(TextureIndexTest) ]])
 {
-    return float4(in.color);
+    constexpr sampler colorSampler(mip_filter::linear,
+                                   mag_filter::linear,
+                                   min_filter::linear);
+
+    half4 colorSample = colorMap.sample(colorSampler, in.texCoord.xy);
+    return float4(in.color) * float4(colorSample);
 }

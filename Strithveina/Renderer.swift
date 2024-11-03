@@ -15,6 +15,7 @@ import simd
 struct STVertex {
     let position: vector_float2;
     let color: vector_float4;
+    let texCoord: vector_float2;
 };
 
 // Uniform data
@@ -30,17 +31,18 @@ class Renderer: NSObject, MTKViewDelegate {
     let commandQueue: MTLCommandQueue
     let renderPipelineState: MTLRenderPipelineState
     let vertexBuffer: MTLBuffer
-//    let uniformBuffer: MTLBuffer
+    
+    let texture: MTLTexture
     
     let vertices: [STVertex] = [
         // 2D positions,    RGBA colors
-        STVertex(position: SIMD2(-0.5, -0.5 ), color: SIMD4(1, 0, 0, 1)),
-        STVertex(position: SIMD2(0.5, -0.5 ), color: SIMD4(0, 1, 0, 1)),
-        STVertex(position: SIMD2(-0.5, 0.5), color: SIMD4(0, 0, 1, 1)),
+        STVertex(position: SIMD2(-0.5, -0.5 ), color: SIMD4(1, 0, 0, 1), texCoord: SIMD2(0, 1)),
+        STVertex(position: SIMD2(0.5, -0.5 ), color: SIMD4(0, 1, 0, 1), texCoord: SIMD2(1, 1)),
+        STVertex(position: SIMD2(-0.5, 0.5), color: SIMD4(0, 0, 1, 1), texCoord: SIMD2(0, 0)),
         
-        STVertex(position: SIMD2(0.5, 0.5 ), color: SIMD4(1, 0, 0, 1)),
-        STVertex(position: SIMD2(0.5, -0.5 ), color: SIMD4(0, 1, 0, 1)),
-        STVertex(position: SIMD2(-0.5, 0.5), color: SIMD4(0, 0, 1, 1)),
+        STVertex(position: SIMD2(0.5, 0.5 ), color: SIMD4(1, 0, 0, 1), texCoord: SIMD2(1, 0)),
+        STVertex(position: SIMD2(0.5, -0.5 ), color: SIMD4(0, 1, 0, 1), texCoord: SIMD2(1, 1)),
+        STVertex(position: SIMD2(-0.5, 0.5), color: SIMD4(0, 0, 1, 1), texCoord: SIMD2(0, 0)),
     ];
     
     var uniforms: STUniform = STUniform(
@@ -119,14 +121,13 @@ class Renderer: NSObject, MTKViewDelegate {
             return nil
         }
         self.vertexBuffer = vertexBuffer
-//        
-//        // Populate uniform buffer
-//        guard let uniformBuffer = self.device.makeBuffer(bytes: [self.uniforms],
-//                                                         length: MemoryLayout<STUniform>.stride) else {
-//            Log.renderError("Failed to create uniform buffer object");
-//            return nil
-//        }
-//        self.uniformBuffer = uniformBuffer
+    
+        do {
+             texture = try Renderer.loadTexture(device: device, textureName: "ColorMap")
+         } catch {
+             Log.renderError("Unable to load texture. Error info: \(error)")
+             return nil
+         }
         
         super.init()
     }
@@ -164,7 +165,7 @@ class Renderer: NSObject, MTKViewDelegate {
         renderEncoder.setRenderPipelineState(self.renderPipelineState)
         renderEncoder.setVertexBuffer(self.vertexBuffer, offset: 0, index: BufferIndex.vertexData.rawValue)
         renderEncoder.setVertexBytes([self.uniforms], length: MemoryLayout<STUniform>.stride, attributeStride: MemoryLayout<STUniform>.stride, index: BufferIndex.uniformData.rawValue)
-//        renderEncoder.setVertexBuffer(self.uniformBuffer, offset: 0, index: 1)
+        renderEncoder.setFragmentTexture(self.texture, index: TextureIndex.test.rawValue)
         renderEncoder.drawPrimitives(type: MTLPrimitiveType.triangle,
                                      vertexStart: 0,
                                      vertexCount: self.vertices.count)
@@ -181,6 +182,24 @@ class Renderer: NSObject, MTKViewDelegate {
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         self.aspect = Float(size.width / size.height)
+    }
+    
+    class func loadTexture(device: MTLDevice,
+                           textureName: String) throws -> MTLTexture {
+        /// Load texture data with optimal parameters for sampling
+        
+        let textureLoader = MTKTextureLoader(device: device)
+        
+        let textureLoaderOptions = [
+            MTKTextureLoader.Option.textureUsage: NSNumber(value: MTLTextureUsage.shaderRead.rawValue),
+            MTKTextureLoader.Option.textureStorageMode: NSNumber(value: MTLStorageMode.`private`.rawValue)
+        ]
+        
+        return try textureLoader.newTexture(name: textureName,
+                                            scaleFactor: 1.0,
+                                            bundle: nil,
+                                            options: textureLoaderOptions)
+        
     }
 }
 

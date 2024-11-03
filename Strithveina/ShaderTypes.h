@@ -34,10 +34,10 @@ typedef NS_ENUM(EnumBackingType, BufferIndex)
 //    VertexAttributeColor  = 1,
 //};
 
-//typedef NS_ENUM(EnumBackingType, TextureIndex)
-//{
-//    TextureIndexColor    = 0,
-//};
+typedef NS_ENUM(EnumBackingType, TextureIndex)
+{
+    TextureIndexTest    = 0,
+};
 
 //typedef struct
 //{
