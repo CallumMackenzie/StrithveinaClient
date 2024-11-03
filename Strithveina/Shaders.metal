@@ -27,12 +27,20 @@ typedef struct
     float4 color;
 } ColorInOut;
 
+typedef struct {
+    float2 offset;
+    matrix_float2x2 transform;
+} Uniforms;
+
 vertex ColorInOut vertexShader(device const Vertex *vertexes [[buffer(BufferIndexVertexData)]],
-                               uint vid [[vertex_id]])
+                               uint vid [[vertex_id]],
+                               constant Uniforms &uniforms [[buffer(BufferIndexUniformData)]])
 {
     ColorInOut out;
     
-    out.position = float4(vertexes[vid].position, 0.0, 1.0);
+    float2 transformed = vertexes[vid].position * uniforms.transform;
+    
+    out.position = float4(transformed + uniforms.offset, 0.0, 1.0);
     out.color = vertexes[vid].color;
 
     return out;

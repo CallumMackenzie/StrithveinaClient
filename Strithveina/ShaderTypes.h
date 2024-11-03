@@ -25,6 +25,7 @@ typedef NSInteger EnumBackingType;
 typedef NS_ENUM(EnumBackingType, BufferIndex)
 {
     BufferIndexVertexData = 0,
+    BufferIndexUniformData = 1,
 };
 
 //typedef NS_ENUM(EnumBackingType, VertexAttribute)

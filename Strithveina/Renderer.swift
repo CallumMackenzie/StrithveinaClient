@@ -17,6 +17,12 @@ struct STVertex {
     let color: vector_float4;
 };
 
+// Uniform data
+struct STUniform {
+    let offset: vector_float2;
+    var transform: matrix_float2x2;
+}
+
 class Renderer: NSObject, MTKViewDelegate {
     
     let device: MTLDevice
@@ -24,13 +30,26 @@ class Renderer: NSObject, MTKViewDelegate {
     let commandQueue: MTLCommandQueue
     let renderPipelineState: MTLRenderPipelineState
     let vertexBuffer: MTLBuffer
+//    let uniformBuffer: MTLBuffer
     
     let vertices: [STVertex] = [
         // 2D positions,    RGBA colors
         STVertex(position: SIMD2(-0.5, -0.5 ), color: SIMD4(1, 0, 0, 1)),
-        STVertex(position: SIMD2(0.5, -0.5 ), color:SIMD4(0, 1, 0, 1)),
-        STVertex(position: SIMD2(0, 0.5), color:SIMD4(0, 0, 1, 1)),
+        STVertex(position: SIMD2(0.5, -0.5 ), color: SIMD4(0, 1, 0, 1)),
+        STVertex(position: SIMD2(-0.5, 0.5), color: SIMD4(0, 0, 1, 1)),
+        
+        STVertex(position: SIMD2(0.5, 0.5 ), color: SIMD4(1, 0, 0, 1)),
+        STVertex(position: SIMD2(0.5, -0.5 ), color: SIMD4(0, 1, 0, 1)),
+        STVertex(position: SIMD2(-0.5, 0.5), color: SIMD4(0, 0, 1, 1)),
     ];
+    
+    var uniforms: STUniform = STUniform(
+        offset: SIMD2(0, 0),
+        transform: matrix2x2_rotation(radians: 0)
+    );
+    
+    var rotationRadians: Float = 0;
+    var aspect: Float = 1;
   
     @MainActor
     init?(metalKitView: MTKView) {
@@ -93,18 +112,37 @@ class Renderer: NSObject, MTKViewDelegate {
         Log.render("Created pipeline state object (PSO)")
         
         
-        // Populate buffer
+        // Populate vertex buffer
         guard let vertexBuffer = self.device.makeBuffer(bytes: self.vertices,
                                                         length: MemoryLayout<STVertex>.stride * self.vertices.count) else {
             Log.renderError("Failed to create vertex buffer object")
             return nil
         }
         self.vertexBuffer = vertexBuffer
+//        
+//        // Populate uniform buffer
+//        guard let uniformBuffer = self.device.makeBuffer(bytes: [self.uniforms],
+//                                                         length: MemoryLayout<STUniform>.stride) else {
+//            Log.renderError("Failed to create uniform buffer object");
+//            return nil
+//        }
+//        self.uniformBuffer = uniformBuffer
         
         super.init()
     }
     
+    func stepGame() {
+        self.rotationRadians += 0.01;
+    }
+    
+    func updateUniforms() {
+        self.uniforms.transform = matrix2x2_rotation(radians: self.rotationRadians) * matrix2x2_scale(x: 1, y: self.aspect) * matrix2x2_scale(x: 0.5, y: 0.5)
+    }
+    
     func draw(in view: MTKView) {
+        self.stepGame()
+        self.updateUniforms()
+        
         // Create command buffer
         guard let commandBuffer = self.commandQueue.makeCommandBuffer() else {
             Log.renderError("Failed to create command buffer")
@@ -124,7 +162,9 @@ class Renderer: NSObject, MTKViewDelegate {
         }
         renderEncoder.label = "Primary render encoder"
         renderEncoder.setRenderPipelineState(self.renderPipelineState)
-        renderEncoder.setVertexBuffer(self.vertexBuffer, offset: 0, index: 0)
+        renderEncoder.setVertexBuffer(self.vertexBuffer, offset: 0, index: BufferIndex.vertexData.rawValue)
+        renderEncoder.setVertexBytes([self.uniforms], length: MemoryLayout<STUniform>.stride, attributeStride: MemoryLayout<STUniform>.stride, index: BufferIndex.uniformData.rawValue)
+//        renderEncoder.setVertexBuffer(self.uniformBuffer, offset: 0, index: 1)
         renderEncoder.drawPrimitives(type: MTLPrimitiveType.triangle,
                                      vertexStart: 0,
                                      vertexCount: self.vertices.count)
@@ -140,12 +180,18 @@ class Renderer: NSObject, MTKViewDelegate {
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+        self.aspect = Float(size.width / size.height)
     }
 }
 
 func matrix2x2_rotation(radians: Float) -> matrix_float2x2 {
     return matrix_float2x2(SIMD2(cos(radians), sin(radians)),
                            SIMD2(-sin(radians), cos(radians)))
+}
+
+func matrix2x2_scale(x: Float, y: Float) -> matrix_float2x2 {
+    return matrix_float2x2(SIMD2(x, 0),
+                           SIMD2(0, y));
 }
 
 func radians_from_degrees(_ degrees: Float) -> Float {
