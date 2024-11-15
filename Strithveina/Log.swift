@@ -9,6 +9,8 @@ class Log {
     static let inst = Log()
     private static let RENDER_TAG = "RENDER";
     private static let GAME_VIEW_TAG = "GAME_VIEW";
+    private static let MESH_TAG = "MESH";
+    private static let CAMERA_TAG = "CAMERA";
     
     public static func render(_ msg: String) {
         Log.inst.printWithTag(tag: RENDER_TAG, msg: msg)
@@ -24,6 +26,18 @@ class Log {
     
     public static func gameViewError(_ msg: String) {
         Log.inst.errorWithTag(tag: GAME_VIEW_TAG, msg: msg)
+    }
+    
+    public static func meshError(_ msg: String) {
+        Log.inst.errorWithTag(tag: MESH_TAG, msg: msg)
+    }
+    
+    public static func camera(_ msg: String) {
+        Log.inst.printWithTag(tag: CAMERA_TAG, msg: msg)
+    }
+    
+    public static func cameraError(_ msg: String) {
+        Log.inst.errorWithTag(tag: CAMERA_TAG, msg: msg)
     }
     
     

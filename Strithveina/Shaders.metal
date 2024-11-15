@@ -18,44 +18,47 @@ using namespace metal;
 typedef struct
 {
     float2 position;
-    float4 color;
     float2 texCoord;
 } Vertex;
 
 typedef struct
 {
     float4 position [[position]];
-    float4 color;
     float2 texCoord;
 } ColorInOut;
 
 typedef struct {
     float2 offset;
     matrix_float2x2 transform;
-} Uniforms;
+} MeshUniforms;
 
-vertex ColorInOut vertexShader(device const Vertex *vertexes [[buffer(BufferIndexVertexData)]],
+typedef struct {
+    matrix_float2x2 transform;
+} GlobalUniforms;
+
+vertex ColorInOut vertexShader(device const Vertex *vertices [[buffer(BufferIndexVertexData)]],
                                uint vid [[vertex_id]],
-                               constant Uniforms &uniforms [[buffer(BufferIndexUniformData)]])
+                               constant MeshUniforms &mesh_uniforms [[buffer(BufferIndexMeshUniformData)]],
+                               constant GlobalUniforms &global_uniforms [[buffer(BufferIndexGlobalUniformData)]])
 {
     ColorInOut out;
     
-    float2 transformed = vertexes[vid].position * uniforms.transform;
+    float2 scaled_for_aspect = global_uniforms.transform * vertices[vid].position;
+    float2 transformed = mesh_uniforms.transform * scaled_for_aspect;
     
-    out.position = float4(transformed + uniforms.offset, 0.0, 1.0);
-    out.color = vertexes[vid].color;
-    out.texCoord = vertexes[vid].texCoord;
+    out.position = float4(transformed + mesh_uniforms.offset, 0.0, 1.0);
+    out.texCoord = vertices[vid].texCoord;
 
     return out;
 }
 
 fragment float4 fragmentShader(ColorInOut in [[stage_in]],
-                               texture2d<half> colorMap [[ texture(TextureIndexTest) ]])
+                               texture2d<half> colorMap [[ texture(TextureIndexColorMap) ]])
 {
     constexpr sampler colorSampler(mip_filter::linear,
                                    mag_filter::linear,
                                    min_filter::linear);
 
     half4 colorSample = colorMap.sample(colorSampler, in.texCoord.xy);
-    return float4(in.color) * float4(colorSample);
+    return float4(colorSample);
 }
